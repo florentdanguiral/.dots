@@ -1,0 +1,1 @@
+/home/flo/.dotfiles/scripts/powermenu.sh

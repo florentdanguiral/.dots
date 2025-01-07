@@ -1,0 +1,1 @@
+/home/flo/.dotfiles/waybar/modules/spotify.py
