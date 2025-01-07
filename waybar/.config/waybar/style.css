@@ -1,1 +1,113 @@
-/home/flo/.dotfiles/waybar/style.css
+* {
+  font-family: "Font Awesome";
+  font-weight: normal;
+  font-size: 14px;
+  min-height: 0;
+  color: #cdd6f4;
+}
+#window,
+#clock,
+#pulseaudio,
+#battery,
+#network,
+#workspaces,
+#custom-powermenu,
+#custom-spotify,
+#custom-arch {
+  background-color:  #1e1e2e;
+  margin-top: 2px;
+  margin-bottom: 5px;
+  padding: 3px;
+}
+#tray {
+border: 2px solid #9999CC
+}
+#custom-arch {
+border: 2px solid #9999CC ;
+border-radius: 10px 10px 10px 10px;
+padding-left: 0;
+}
+#custom-powermenu {
+border: 2px solid #9999CC ;
+border-radius: 10px 10px 10px 10px;
+}
+#custom-spotify {
+margin-left: 3px ;
+border: 2px solid #9999CC ;
+border-radius: 10px 10px 10px 10px; 
+}
+#workspaces {
+border: 2px solid #9999CC ;
+margin-left: 10px;
+margin-bottom: 5px;
+}
+#clock {
+border-right: 2px solid #9999CC;
+border-left: 2px solid #9999CC;
+border-top: 2px solid #9999CC;
+border-bottom: 2px solid #9999CC;
+margin-bottom: 5px;
+
+}
+#network {
+border-left: 2px solid #9999CC;
+border-top: 2px solid #9999CC;
+border-bottom: 2px solid #9999CC
+}
+#battery {
+border-top: 2px solid #9999CC;
+border-bottom: 2px solid #9999CC;
+}
+#pulseaudio {
+border-top: 2px solid #9999CC;
+border-bottom: 2px solid #9999CC;
+border-right: 2px solid #9999CC;
+border-radius: 0px 10px 10px 0px; 
+margin-right: 10px;
+margin-bottom: 5px;
+}
+#tray {
+  border-radius: 10px 10px 10px 10px;  
+  margin-right: 3px;
+}
+#network {
+border-radius: 10px 0px 0px 10px;
+}
+#clock{
+    border-radius: 10px 10px 10px 10px}
+#custom-arch {
+margin-left: 3px; }
+#clock {
+  font-weight: bold;
+  margin-right: 3px;
+}
+#window {
+font-weight: bold;
+border-radius: 10px 10px 10px 10px;
+padding-left: 3px;
+padding-right: 3px;
+border: 2px solid #9999CC ;
+margin-bottom: 5px;
+}
+#workspaces button {
+  color: #9999CC;
+  padding: 1px;
+  }
+#workspaces button.active {
+    color: white;
+}
+
+#workspaces button.focused {
+    color: white;
+  }
+#workspaces {
+   border-radius: 10px 10px 10px 10px;
+}
+button {
+  min-width: 16px;
+}
+window#waybar {
+  /* you can also GTK3 CSS functions! */
+  background-color: transparent;
+  border-radius: 10px 10px 10px 10px;
+}
