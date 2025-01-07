@@ -1,1 +1,200 @@
-/home/flo/.dotfiles/yazi/theme.toml
+[colors]
+background = "#212338"
+currentline = "#323449"
+foreground = "#ebfafa"
+comment = "#7081d0"
+cyan = "#04d1f9"
+green = "#37f499"
+orange = "#f7c67f"
+pink = "#f265b5"
+purple = "#a48cf2"
+red = "#f16c75"
+yellow = "#f1fc79"
+g_dark = "#171928"
+bg_highlight = "#292e42"
+terminal_black = "#414868"
+fg_dark = "#ABB4DA"
+fg_gutter = "#3b4261"
+dark3 = "#6473B7"
+dark5 = "#5866A2"
+visual = "#76639e"
+dark_cyan = "#10A1BD"
+magenta2 = "#bf4f8e"
+magenta3 = "#722f55"
+dark_yellow = "#c0c95f"
+dark_green = "#33C57F"
+bright_red = "#f0313e"
+
+# vim:fileencoding=utf-8:foldmethod=marker
+
+# : Manager {{{
+
+[manager]
+cwd = { fg = "#04d1f9"}
+
+# Hovered
+hovered = { fg = "#37f499", bg = "#323449", underline = true  }
+preview_hovered = { underline = true }
+
+# Find
+find_keyword  = { fg = "#37f499", bold = true, italic = true, underline = true }
+find_position = { fg = "#f265b5", bg = "reset", bold = true, italic = true }
+
+# Marker
+marker_copied   = { fg = "#a48cf2", bg = "#a48cf2" }
+marker_cut      = { fg = "#f16c75", bg = "#f16c75" }
+marker_marked   = { fg = "#76639e", bg = "#76639e" }
+marker_selected = { fg = "#f7c67f", bg = "#f7c67f" }
+
+# Tab
+tab_active = { bg = "#212338", fg = "#10A1BD" }
+tab_inactive = { fg = "#ABB4DA", bg = "#292e42" }
+tab_width    = 1
+
+# Count
+count_copied   = { fg = "#212338", bg = "#33C57F" }
+count_cut      = { fg = "#212338", bg = "#f16c75" }
+count_selected = { fg = "#212338", bg = "#c0c95f" }
+
+# Border
+border_symbol = "│"
+border_style  = { fg = "#33C57F" }
+
+# : }}}
+
+
+# : Status {{{
+
+[status]
+separator_open  = ""
+separator_close = ""
+separator_style = { fg = "#292e42", bg = "#292e42" }
+
+# Mode
+mode_normal = { fg = "#1e1e2e", bg = "#04d1f9", bold = true }
+mode_select = { fg = "#1e1e2e", bg = "#f1fc79", bold = true }
+mode_unset  = { fg = "#1e1e2e", bg = "#bf4f8e", bold = true }
+
+# Progress
+progress_label  = { fg = "#ebfafa", bold = true }
+progress_normal = { fg = "#04d1f9", bg = "#292e42" }
+progress_error  = { fg = "#f16c75", bg = "#292e42" }
+
+# Permissions
+permissions_t = { fg = "#37f499" }
+permissions_r = { fg = "#f1fc79" }
+permissions_w = { fg = "#f16c75" }
+permissions_x = { fg = "#04d1f9" }
+permissions_s = { fg = "#76639e" }
+
+# : }}}
+
+# Preview Position
+
+folder_offset = [2, 0, 2, 0]
+preview_offset = [4, 4, 4, 4]
+
+# : Select {{{
+
+[select]
+border   = { fg = "#37f499" }
+active   = { fg = "#f265b5", bold = true }
+inactive = {}
+
+# : }}}
+
+
+# : Input {{{
+
+[input]
+border   = { fg = "#37f499" }
+title    = {}
+value    = {}
+selected = { reversed = true }
+
+# : }}}
+
+# : Completion {{{
+
+[completion]
+border = { fg = "#37f499" }
+
+# : }}}
+
+
+# : Tasks {{{
+
+[tasks]
+border  = { fg = "#37f499" }
+title   = {}
+hovered = { fg = "#76639e", underline = true }
+
+# : }}}
+
+
+# : Which {{{
+
+[which]
+mask            = { bg = "#292e42" }
+cand            = { fg = "#33C57F" }
+rest            = { fg = "#ABB4DA" }
+desc            = { fg = "#f16c75" }
+separator       = "   "
+separator_style = { fg = "#10A1BD" }
+
+# : }}}
+
+# : Help {{{
+
+[help]
+on      = { fg = "#33C57F" }
+run     = { fg = "#a48cf2" }
+hovered = { reversed = true, bold = true }
+footer  = { fg = "#3b4261", bg = "#f7c67f" }
+
+# : }}}
+
+# : Notify {{{
+
+[notify]
+title_info  = { fg = "#04d1f9" }
+title_warn  = { fg = "#f1fc79" }
+title_error = { fg = "#f0313e" }
+
+# : }}}
+
+
+# : File-specific styles {{{
+
+[filetype]
+
+rules = [
+	# Images
+	{ mime = "image/*", fg = "#33C57F" },
+
+	# Media
+	{ mime = "{audio,video}/*", fg = "#f1fc79" },
+
+	# Archives
+	{ mime = "application/{,g}zip", fg = "#f265b5" },
+	{ mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", fg = "#f265b5" },
+
+	# Documents
+	{ mime = "application/{pdf,doc,rtf,vnd.*}", fg = "#04d1f9" },
+
+	# Fallback
+	{ name = "*", fg = "#ebfafa" },
+	{ name = "*/", fg = "#a48cf2" },
+
+    # Special files
+	{ name = "*", is = "orphan", bg = "#f0313e" },
+	{ name = "*", is = "exec"  , fg = "#c0c95f" },
+
+	# Dummy files
+	{ name = "*", is = "dummy", bg = "#f16c75" },
+	{ name = "*/", is = "dummy", bg = "#f16c75" },
+]
+
+# : }}}
+
+# Fallback
