@@ -21,14 +21,21 @@ return {
 		-- Setup Mason and install Firefox adapter
 		require("mason").setup()
 		require("mason-nvim-dap").setup({
-			ensure_installed = { "firefox" },
+			ensure_installed = {},
 		})
 
-		-- Configure dap adapter for Firefox
-		require("dap").adapters.firefox = {
-			type = "executable",
-			command = "node",
-			args = { vim.fn.stdpath("data") .. "/mason/packages/firefox-debug-adapter/dist/adapter.bundle.js" },
+		require("dap").adapters["pwa-node"] = {
+			type = "server",
+			host = "localhost",
+			port = "${port}",
+			executable = {
+				command = "node",
+				-- 💀 Make sure to update this path to point to your installation
+				args = {
+					"/home/flo/.local/share/nvim/mason/packages/js-debug-adapter/js-debug/src/dapDebugServer.js",
+					"${port}",
+				},
+			},
 		}
 
 		-- Configure dap for various languages including Chrome and Firefox
@@ -82,7 +89,7 @@ return {
 					protocol = "inspector",
 					skipFiles = { "**/node_modules/**/*" },
 				},
-        -- React Native Metro bundler (attach mode)
+				-- React Native Metro bundler (attach mode)
 				{
 					type = "pwa-node",
 					request = "attach",
@@ -128,28 +135,29 @@ return {
 					sourceMaps = true,
 					skipFiles = { "**/node_modules/**/*", "**/@vite/*", "**/src/client/*", "**/src/*" },
 				},
-        {
-    type = "pwa-node",
-    request = "attach",
-    name = "Attach to NestJS",
-    port = 9229,
-    cwd = "${workspaceFolder}",
-    sourceMaps = true,
-    protocol = "inspector",
-    localRoot = vim.fn.getcwd,
-    remoteRoot = "/app", 
-  },
-    {
-    name = 'Launch NestJS Test',
-    type = 'pwa-node',
-    request = 'launch',
-    program = '${workspaceFolder}/node_modules/.bin/jest',
-    args = { '${file}' },
-    cwd = vim.fn.getcwd(),
-    sourceMaps = true,
-    protocol = 'inspector',
-    console = 'integratedTerminal',
-  },
+				{
+					type = "pwa-node",
+					request = "attach",
+					name = "Attach to NestJS2",
+					port = 9229,
+					cwd = "${workspaceFolder}",
+					sourceMaps = true,
+					protocol = "inspector",
+					localRoot = vim.fn.getcwd(), -- Ajoutez les parenthèses ici pour obtenir une chaîne
+					remoteRoot = "/app",
+					skipFiles = { "**/node_modules/**/*" },
+				},
+				{
+					name = "Launch NestJS Test",
+					type = "pwa-node",
+					request = "launch",
+					program = "${workspaceFolder}/node_modules/.bin/jest",
+					args = { "${file}" },
+					cwd = vim.fn.getcwd(),
+					sourceMaps = true,
+					protocol = "inspector",
+					console = "integratedTerminal",
+				},
 				-- Only for JavaScript: launch the current file in a new Node.js process
 				language == "javascript"
 						and {

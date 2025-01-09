@@ -15,13 +15,14 @@ compinit
 eval "$(starship init zsh)"
 export STARSHIP_CONFIG=~/.dotfiles/starship/starship.toml
 
-source ~/.dotfiles/eldritch/colors.sh
+source ~/.dots/eldritch/colors.sh
 
 # Load Angular CLI autocompletion.
 source <(ng completion script)
 
 export EDITOR=nvim
 #export PATH=/home/flo/.spicetify:$HOME/.tmuxifier/bin:$PATH
+export LUAROCKS_LUA_BIN=/usr/bin/lua5.1
 
 export PATH="$HOME/.tmuxifier/bin:$PATH"
 #export ANDROID_HOME=$HOME/android-sdk

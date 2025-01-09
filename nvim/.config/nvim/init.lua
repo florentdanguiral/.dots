@@ -18,8 +18,8 @@ vim.cmd("set softtabstop=2")
 vim.cmd("set shiftwidth=2")
 vim.o.conceallevel = 1
 vim.opt.conceallevel = 1
--- package.path = package.path .. ";" .. vim.fn.expand("$HOME") .. "/.luarocks/share/lua/5.1/?/init.lua;"
--- package.path = package.path .. ";" .. vim.fn.expand("$HOME") .. "/.luarocks/share/lua/5.1/?.lua;"
+package.path = package.path .. ";" .. vim.fn.expand("$HOME") .. "/.luarocks/share/lua/5.1/?/init.lua;"
+package.path = package.path .. ";" .. vim.fn.expand("$HOME") .. "/.luarocks/share/lua/5.1/?.lua;"
 
 vim.keymap.set("n", "<C-k>", "<Cmd>wincmd k<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<C-j>", "<Cmd>wincmd j<CR>", { noremap = true, silent = true })
@@ -58,7 +58,6 @@ require("lazy").setup({
 	{ import = "plugins" },
 	{ import = "lsp" },
 	{ import = "debugging" },
-	{ import = "debugging-js" },
 })
 
 vim.cmd([[colorscheme eldritch]])

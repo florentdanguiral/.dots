@@ -1,0 +1,10 @@
+profile externe {
+    output eDP-1 disable
+    output HDMI-A-1 enable position 0,0
+}
+
+profile interne {
+    output eDP-1 enable
+    output HDMI-A-1 disable
+}
+
