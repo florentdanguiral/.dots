@@ -32,7 +32,7 @@ export ANDROID_SDK_ROOT=/opt/android-sdk
 export PATH=$PATH:$ANDROID_SDK_ROOT/cmdline-tools/latest/bin
 export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
 export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
-
+export PATH=$PATH:$HOME/.local/bin
 alias v="nvim"
 #alias y="yazi"
 alias stow="stow -d ~/.dots"
@@ -75,3 +75,5 @@ function y() {
 }
 
 
+
+. "$HOME/.local/bin/env"

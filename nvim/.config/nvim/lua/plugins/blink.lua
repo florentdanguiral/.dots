@@ -17,7 +17,10 @@ return {
 
 		-- list of enabled providers t
 		sources = {
-			default = { "lsp", "path", "luasnip", "snippets", "buffer" },
+			default = { "lsp", "path", "snippets", "buffer" },
+		},
+		snippets = {
+			preset = "luasnip",
 		},
 	},
 	opts_extend = { "sources.default" },
