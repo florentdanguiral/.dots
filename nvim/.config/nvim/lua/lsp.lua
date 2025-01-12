@@ -16,7 +16,15 @@ return {
 		"williamboman/mason.nvim",
 		lazy = false,
 		config = function()
-			require("mason").setup({})
+			require("mason").setup({
+				ui = {
+					icons = {
+						package_installed = "✓",
+						package_pending = "➜",
+						package_uninstalled = "✗",
+					},
+				},
+			})
 		end,
 	},
 	{
@@ -28,6 +36,7 @@ return {
 		config = function()
 			require("mason-lspconfig").setup({
 				ensure_installed = servers,
+				auto_update = true,
 			})
 		end,
 	},

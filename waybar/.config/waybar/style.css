@@ -1,7 +1,7 @@
-@define-color activefontcolor #d95f90;
-@define-color fontcolor #ffffff;
+@define-color activefontcolor #ffffff;
+@define-color fontcolor #f0f0f0;
 @define-color backgroundcolor #1e1e1e;
-@define-color bordercolor #d95f90;
+@define-color bordercolor #f0f0f0;
 * {
   font-family: "Font Awesome";
   min-height: 0;
@@ -22,11 +22,14 @@
 }
 #tray {
   border: 2px solid @bordercolor;
+  border-radius: 10px 10px 10px 10px;
+  margin-right: 3px;
 }
 #custom-arch {
   border: 2px solid @bordercolor;
   border-radius: 10px 10px 10px 10px;
   padding-left: 0;
+  margin-left: 3px;
 }
 #custom-powermenu {
   border: 2px solid @bordercolor;
@@ -41,17 +44,24 @@
   border: 2px solid @bordercolor;
   margin-left: 10px;
   margin-bottom: 5px;
+  border-radius: 10px 10px 10px 10px;
 }
 #clock {
+  border: 2px solid @bordercolor;
   border-right: 2px solid @bordercolor;
   border-left: 2px solid @bordercolor;
   border-top: 2px solid @bordercolor;
   border-bottom: 2px solid @bordercolor;
+  border-radius: 10px 10px 10px 10px;
+  font-weight: bold;
+  margin-right: 3px;
+  color: @fontcolor;
 }
 #network {
   border-left: 2px solid @bordercolor;
   border-top: 2px solid @bordercolor;
   border-bottom: 2px solid @bordercolor;
+  border-radius: 10px 0px 0px 10px;
 }
 #battery {
   border-top: 2px solid @bordercolor;
@@ -65,23 +75,6 @@
   margin-right: 10px;
   margin-bottom: 5px;
 }
-#tray {
-  border-radius: 10px 10px 10px 10px;
-  margin-right: 3px;
-}
-#network {
-  border-radius: 10px 0px 0px 10px;
-}
-#clock {
-  border-radius: 10px 10px 10px 10px;
-}
-#custom-arch {
-  margin-left: 3px;
-}
-#clock {
-  font-weight: bold;
-  margin-right: 3px;
-}
 #window {
   font-weight: bold;
   border-radius: 10px 10px 10px 10px;
@@ -94,12 +87,6 @@
 #workspaces button.focused {
   color: @activefontcolor;
 }
-#workspaces {
-  border-radius: 10px 10px 10px 10px;
-}
-/*button {
-  min-width: 16px;
-}*/
 window#waybar {
   /* you can also GTK3 CSS functions! */
   background-color: transparent;
@@ -112,4 +99,5 @@ window#waybar {
 #workspaces > button.active {
   color: @activefontcolor;
   font-size: 16px;
+  font-weight: bold;
 }

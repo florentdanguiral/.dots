@@ -10,7 +10,8 @@ export COLOR23="#396592"
 
 # General colors
 export COLOR04="#987afb"
-export COLOR02="#37f499"
+# export COLOR02="#37f499"
+export COLOR02="#F712FF" 
 export COLOR03="#04d1f9"
 export COLOR01="#949ae5"
 export COLOR05="#19dfcf"

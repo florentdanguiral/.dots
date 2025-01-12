@@ -1,4 +1,6 @@
 # Lines configured by zsh-newuser-install
+export ZSH="$HOME/.oh-my-zsh"
+
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
@@ -19,10 +21,10 @@ source ~/.dots/eldritch/colors.sh
 
 # Load Angular CLI autocompletion.
 source <(ng completion script)
-
 export EDITOR=nvim
 #export PATH=/home/flo/.spicetify:$HOME/.tmuxifier/bin:$PATH
 export LUAROCKS_LUA_BIN=/usr/bin/lua5.1
+
 
 export PATH="$HOME/.tmuxifier/bin:$PATH"
 #export ANDROID_HOME=$HOME/android-sdk
@@ -77,3 +79,7 @@ function y() {
 
 
 . "$HOME/.local/bin/env"
+
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting you-should-use)
+
+source $ZSH/oh-my-zsh.sh

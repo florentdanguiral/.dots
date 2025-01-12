@@ -12,6 +12,7 @@ opt.foldenable = true
 opt.foldtext = ""
 -- Définir les langues du spell checking
 opt.spelllang = { "en", "fr" }
+opt.clipboard:append("unnamedplus")
 vim.cmd("set expandtab")
 vim.cmd("set tabstop=2")
 vim.cmd("set softtabstop=2")

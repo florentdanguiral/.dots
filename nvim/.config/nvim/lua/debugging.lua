@@ -66,6 +66,7 @@ return {
 		require("mason-nvim-dap").setup({
 			ensure_installed = {
 				"js",
+				"chrome",
 			},
 			automatic_installation = true,
 		})
@@ -84,7 +85,15 @@ return {
 			},
 		}
 
-		for _, language in ipairs({ "typescript", "javascript", "svelte" }) do
+		require("dap").adapters["pwa-chrome"] = {
+			type = "executable",
+			command = "node",
+			args = {
+				os.getenv("HOME") .. "/.local/share/nvim/mason/packages/chrome-debug-adapter/out/src/chromeDebug.js",
+			},
+		}
+
+		for _, language in ipairs({ "typescript", "javascript", "svelte", "javascriptreact", "typescriptreact" }) do
 			require("dap").configurations[language] = {
 				-- Node.js configuration
 				{
@@ -111,6 +120,7 @@ return {
 					port = 9222,
 					webRoot = "${workspaceFolder}",
 					skipFiles = { "**/node_modules/**/*", "**/@vite/*", "**/src/client/*", "**/src/*" },
+					runtimeExecutable = "/usr/bin/chromium",
 				},
 				{
 					type = "pwa-chrome",

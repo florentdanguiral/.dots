@@ -1,6 +1,17 @@
 #!/bin/bash
 
 pkg=(
+  hyprland
+  hyprpaper
+  hypridle
+  waybar
+  wl-roots
+  rofi
+  xdg-desktop-portal-hyprland
+  polkit-kde-agent
+  firefox
+  network-manager-applet
+  kitty
   fastfetch
   mako
   swaylock-effects
@@ -17,6 +28,22 @@ pkg=(
   rofi
   waybar
   stow
+  less
+  lua51
+  luarocks
+  imagemagick
+  thunar
+  yazi
+  nwg-look
+  python
+  papirus-icon-theme
+  hyprpicker
+  qbittorrent 
+  mpv
+  kanshi
+  chromium
+  zsh
+  
 )
 
 for pkg in "${pkg[@]}"; do
